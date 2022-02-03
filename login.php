@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: application/json');
 require_once 'database.php';
 
 $user_id = $_POST['id'];
@@ -11,17 +11,15 @@ $sql = "SELECT * FROM board_user WHERE user_id='{$user_id}' AND user_pwd='{$user
 $result = mysqli_query($conn,$sql);
 
 
-if (mysqli_num_rows($result) > 0 ){
+if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $result_array[]=$row;    
+        $result_array[] = $row; 
     }
-    echo json_encode($result_array);   
+    if (isset($result_array)) {
+        echo json_encode($result_array);
+    } else {
+        echo 'loginFail';
+    }
 } else {
-    echo 1;
-}
-
-
-
-
-
-
+    echo 'queryError';
+} 

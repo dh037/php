@@ -12,7 +12,11 @@ if (mysqli_num_rows($result) > 0 ){
     while ($row = mysqli_fetch_assoc($result)) {
         $result_array[]=$row;    
     }
-    echo json_encode($result_array);   
+    if (isset($result_array)) {
+        echo json_encode($result_array);
+    } else {
+        echo 'selectFail';
+    }
 } else {
     echo 1;
 }
