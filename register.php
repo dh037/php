@@ -9,6 +9,7 @@ $user_phone = $_POST['phone'];
 $user_email = $_POST['email'];
 $hobbies = $_POST['hobbies'];
 $user_gender = $_POST['gender'];
+$user_profile_image = $_POST['image'];
 $user_zip = $_POST['zip'];
 $user_addr1 = $_POST['address1'];
 $user_addr2 = $_POST['address2'];
@@ -20,6 +21,7 @@ $sql = "INSERT INTO board_user VALUES(
     '{$user_nm}',
     '{$user_phone}',
     '{$user_email}',
+    '{$user_profile_image}',
     '{$user_zip}',
     '{$user_addr1}',
     '{$user_addr2}',

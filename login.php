@@ -18,7 +18,7 @@ if ($result) {
     if (isset($result_array)) {
         echo json_encode($result_array);
     } else {
-        echo 'loginFail';
+        echo json_encode('loginFail');
     }
 } else {
     echo 'queryError';

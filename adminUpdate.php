@@ -24,8 +24,8 @@ if ($result) {
       if (isset($result_array)){
             echo json_encode($result_array);
       } else {
-            echo 'updateFail';
+            echo json_encode('updateFail');
       }
 } else {
-      echo "queryError";
+      echo json_encode("queryError");
 }
