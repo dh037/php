@@ -1,6 +1,9 @@
 <?php
 header('Content-Type: application/json');
 require_once 'database.php';
+// $fp = fopen("./log_message.txt", "ab+");
+// fwrite($fp, json_encode($_SERVER)."\n");
+// fclose($fp);
 
 $user_id = $_POST['id'];
 $user_pwd = $_POST['password'];
